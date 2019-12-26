@@ -48,7 +48,7 @@ $$
 
 The MRAC focuses on designing the adaptive part of the controller $$\nu_{ad}$$, which aims at canceling the model uncertainties.
 
-<img src="../assets/MRAC.png" width="500"/>
+<img src="/assets/MRAC.png" width="500">
 
 Traditionally classical MRAC handles the uncertainty as modeled as a single layer neural network. The uncertainties can be modeled as structured and unstructured uncertainties as follows,
 
