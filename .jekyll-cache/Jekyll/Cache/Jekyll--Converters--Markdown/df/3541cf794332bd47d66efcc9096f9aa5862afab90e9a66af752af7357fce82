@@ -1,0 +1,114 @@
+I"�%<h2 id="abstract">Abstract:</h2>
+<p>We present a new neuroadaptive architecture: Deep Neural Network-based Model Reference Adaptive Control (DMRAC). 
+Our architecture utilizes the power of deep neural network representations for modeling significant nonlinearities while marrying it with the boundedness guarantees that characterize MRAC based controllers. We demonstrate that 
+DMRAC can subsume previously studied learning-based MRAC methods, such as concurrent learning and GP-MRAC. 
+This makes DMRAC a highly powerful architecture for high-performance control of nonlinear systems with long-term learning properties.</p>
+
+<p>please refer to post <a href="/jekyll/update/2019/12/18/Model-Reference-Adaptive-Control.html">Model Reference Adaptive Control</a> for basics of MRAC</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>One significant design choice in MRAC architecture is the selection of feature vector for unstructured uncertainty case. In <a href="/jekyll/update/2019/12/18/Model-Reference-Adaptive-Control.html">Model Reference Adaptive Control</a> article, we showed empirically that the choice of the feature vector in the adaptive element directly affected the system capability to approximate the uncertainties.  Using system state <script type="math/tex">x(t)</script> as features resulted in a very poor estimate of uncertainty, and reference tracking, whereas  RBF feature need operating domain knowledge for hyperparameter tuning.</p>
+
+<p><img src="/assets/Classical_MRAC.png" alt="classical_MRAC" />
+<img src="/assets/RBF_MRAC.png" alt="Unstructured_MRAC" /></p>
+
+<p>To alleviate this issue, Chowdhary et al. presented a <a href="https://ieeexplore.ieee.org/document/6759992">Gaussian Process Model Reference Adaptive Controller</a>. Gaussian Process (GP)-MRAC utilizes a GP as a model of uncertainty. A GP is a Bayesian nonparametric adaptive element that can adapt both its weights and the structure of the model in response to the data. GP-MRAC has strong long-term learning properties as well as high control performance (Refer <a href="https://ieeexplore.ieee.org/document/8619431">Gaussian Process Model Reference Adaptive Controller with Generative Network</a>).</p>
+
+<p><img src="/assets/GP.png" alt="GP" /></p>
+
+<p>However, GPs can be viewed as “shallow” machine learning models, and do not utilize the power of learning complex features through compositions as deep networks do. Hence, one wonders whether the power of deep learning could lead to even more powerful learning-based MRAC architectures than those utilizing GPs.</p>
+
+<p>Deep Neural Networks (DNN) have lately shown tremendous empirical performance in many applications, including fields such as computer vision, speech recognition, translation, natural language processing, Robotics, Autonomous driving, and many more. Unlike their counterparts, such as Gaussian Radial Basis Function networks, deep networks learn features by learning the weights of nonlinear compositions of weighted features arranged in a directed acyclic graph. It is now pretty clear that deep neural networks are outshining heuristic-based regression and classification algorithms as well as RBFNs, GPs, Single Hidden layer-NNs, and other classical machine learning techniques. However, their utility in the context of control, and especially safety-critical control, which requires stability guarantees, has been an open question.</p>
+
+<p>This article presents a control architecture and flight test results of Deep Neural Network MRAC (DMRAC). However, for the details of DMRAC controller, the algorithm for the online update of the weights of the DNN by utilizing a dual time-scale adaptation scheme, stability guarantees and Uniform Ultimate Boundedness (UUB) of the entire DMRAC controller refer to our paper <a href="https://arxiv.org/abs/1909.08602">Deep Model Reference Adaptive Control</a></p>
+
+<p>DMRAC controller aims to enforce the unknown nonlinear dynamic system to track a designed reference model given as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ \dot{x}(t) &= f(x)+Bu(t) \\
+ \dot{x}_{rm}(t) &= A_{rm}x_{rm}(t)+B_{rm}r(t)
+\end{align*} %]]></script>
+
+<p>Where <script type="math/tex">x(t) \in \mathcal{D}_x \in \mathbb{R}^n</script>, <script type="math/tex">u(t) \in \mathbb{R}^m</script> and <script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is Lipschitz.</p>
+
+<p>The control is designed to be of the form <script type="math/tex">u(t) = -kx(t)+k_gr(t)-\nu_{ad}</script>, 
+Where <script type="math/tex">k, k_g</script> are designed to satisfy the following matching condition
+<script type="math/tex">A_{rm} = A-Bk, B_{rm}=Bk_g</script></p>
+
+<p>DMRAC model uncertaintaties as deep neural network,</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+\nu_{ad}(x) = W^T\phi_n(\theta_{n-1},\phi_{n-1}(\theta_{n-2},\phi_{n-2}(...))))
+\end{align*}</script>
+
+<p>We separate the network weights as outer layer weights <script type="math/tex">W</script> and inner-layer weights <script type="math/tex">\theta_n</script>. The inner layer weights are updated using stochastic gradient descent over replay buffer collected over previous data.</p>
+
+<p>\begin{equation}
+ L(\boldsymbol{Z, \theta}) = \frac{1}{M}\sum_i^M \ell(\boldsymbol{Z_i, \theta})
+ \label{empirical_loss}
+ \end{equation}</p>
+
+<p>\begin{equation}
+ \boldsymbol{\theta}_{k+1} = 
+ <!-- \boldsymbol{\theta}_k - \eta\frac{1}{M}\sum_i^M \nabla_{ \boldsymbol{\theta}}L(\boldsymbol{\theta}) -->
+ \label{SGD2}
+ \end{equation}
+ Where <script type="math/tex">L(\boldsymbol{Z, \theta})</script> empirical estimate of <script type="math/tex">\ell_2</script> cost function over data.</p>
+
+<p>The outer layer weights of DMRAC are updated using MRAC rule.</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \dot{W} = -\Gamma\phi_n(x)e(t)^TPB
+\end{align*}</script>
+
+<p>The total controller flow diagram is as follows, and further details can be found in <a href="https://arxiv.org/abs/1909.08602">Deep Model Reference Adaptive Control</a></p>
+
+<p><img src="/assets/DMRAC.png" width="500" /></p>
+
+<h2 id="flight-results">Flight Results</h2>
+<p>We used an off the shelf available <a href="https://www.parrot.com/us/drones/parrot-mambo-fpv">Parrot Mambo Quadrotor</a> to experiment with DMRAC control architecture in the VICON facility at the University of Illinois CSL <a href="https://robotics.illinois.edu/">Illinois Robotics Lab</a>.</p>
+
+<h3 id="cross-wind-disturbance">Cross Wind Disturbance</h3>
+
+<p>In this experiment the controller is tasked to maintain a circular trajectory tracking under a cross wind. We attached a cloth underneath the quadrotor, under the cross wind flapping of this cloth introduced nonlinear disturbance torque on the vehicle apart from side ward force from cross wind. The controller task is to track the trajectory under cross winds.</p>
+
+<p><img src="/assets/DMRAC_HWBT2.png" alt="DNN_MRAC" />
+<img src="/assets/DMRAC_HWBS2.png" alt="DNN_MRAC" />
+<img src="/assets/DMRAC_HWBC.png" alt="DNN_MRAC" /></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sP4fFDVWcJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="fault-tolerant-control">Fault Tolerant Control</h3>
+
+<p>In this experiment the controller handles a rotor blade breaking in middle of the flight (Listen to rotor breaking!!). The quadrotor is commanded to maintian a altitude of 1 meter above ground level. The rotor blade breaks in middle of flight and controller task is to maintain the altitude despite the fault.</p>
+
+<p><img src="/assets/DMRAC_FTC.png" alt="DNN_MRAC" /></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gBpfiXSdNyk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and rebuild the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+Jekyll requires blog post files to be named according to the following format:
+
+`YEAR-MONTH-DAY-title.MARKUP`
+
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+ <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/-->
+
+:ET

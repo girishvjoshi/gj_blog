@@ -1,0 +1,38 @@
+I"�<p>I am a PhD candidate at Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My Research is direct towards exploring Sample Efficient Policy Transfer in Cross Domain tasks in RL, Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.</p>
+
+<p>I have Masters degree in Aerospace engineering from Indian Institue of Science Bangalore. I was part of Indian Space research Organization (ISRO) as Scientist/Engineer ‘SD’ at ISRO-Satellite Center Bangalore (now URSC) for 8 years before leaving for my PhD at UIUC!</p>
+
+<p><strong>Publications</strong></p>
+<ol>
+  <li>Girish Joshi, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal MPSP Guidance, American control conference,IEEE, Washington DC, 2013</li>
+  <li>Girish Joshi, Arnab Maity, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal G-MPSP Guidance Guidance, Navigation, and Control Conference, AIAA , Boston, 2013</li>
+  <li>Girish Joshi, Radhakant Padhi, Robust Satellite Formation Flying Using Dynamic Inversion with Modified State Observer, Multi System Conference, Computer-Aided Control System Design and Systems with Uncertainty(CACSD-SU) IEEE, Hyderabad 2013</li>
+  <li>Girish Joshi, Radhakant Padhi, Robust Satellite Formation Flying Through Online Trajectory Optimization using LQR and Neural Networks, Advances in Control and Optimization of Dynamical Systems, 2014</li>
+  <li>Girish Joshi, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal MPSP Guidance, Indian National Society for Aerospace and Related Mechanism, Bangalore Chapter, 2014</li>
+  <li>R Padhi, Girish Joshi, Kapil Sachan, Avijeet Banerjee, Guidance of Autonomous Aerospace Vehicles for Vertical Soft Landing using Nonlinear Control Theory, Indian Institute of Science Bangalore (INDIA),IISC/CSIC/AE/RP/AOARD/2015/01</li>
+  <li>Girish Joshi, Radhakant Padhi,Robust Control of Quadrotors using Indirect NeuroAdaptive Control Augmented with State Estimation, Guidance, Navigation, and Control Conference, AIAA , Texas, 2017</li>
+  <li>Girish Joshi, Girish Chowdhary, Cross-Domain Transfer Learning using Target Apprentice, :The Multi-disciplinary Conference on Reinforcement Learning and Decision Making 2017</li>
+  <li>Girish Joshi, Girish Chowdhary, Cross-Domain Transfer in Reinforcement Learning using Target Apprentice, IEEE International Conference on Robotics and Automation Brisbane 2018</li>
+  <li>Girish Joshi, Girish Chowdhary, Adaptive Control using Gaussian-Process with Model Reference Generative Network, IEEE Conference on Decision and Control 2018</li>
+  <li>Girish Joshi, Girish Chowdhary, Hybrid Direct-Indirect Adaptive Control of Nonlinear System with Unmatched Uncertainty, IEEE International Conference on Control, Decision and Information Technologies 2019</li>
+  <li>Girish Joshi, Girish Chowdhary, Deep Model Reference Adaptive Control, IEEE International Conference on Decision and Control 2019</li>
+  <li>Girish Joshi, Jasvir Virdi, Girish Chowdhary, Experimental Evaluation of Deep Model Reference Adaptive Control, AIAA SciTech-2020</li>
+</ol>
+
+<p><strong>Contact Address</strong></p>
+
+<p>CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W Main St, Urbana, IL 61801</p>
+
+<p><a href="/assets/GirishJoshi_CV.pdf">CV</a></p>
+
+<!-- You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
+
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
+
+
+[jekyll-organization]: https://github.com/jekyll -->
+:ET

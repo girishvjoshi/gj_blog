@@ -1,0 +1,96 @@
+I"�<!-- ## Preliminaries -->
+<p>Model Reference Adaptive Control (MRAC) is one of the primary approaches to Adaptive Control. The basic idea of MRAC is to design a controller to make an uncertain nonlinear plant to follow a Reference model characterized by designed natural frequency and damping. We can define the nonlinear plant model (to be controlled!) as</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \dot{x}(t) = f(x)+Bu(t)
+\end{align*}</script>
+
+<p>Where <script type="math/tex">x(t) \in \mathcal{D}_x \in \mathbb{R}^n</script>, <script type="math/tex">u(t) \in \mathbb{R}^m</script> and <script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is Lipschitz.</p>
+
+<p>The unknown nonlinear plant model can be re-written in form of nominal dynamics and model uncertainties as,</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \dot{x}(t) = Ax(t)+B(u(t) + \Delta(x)
+\end{align*}</script>
+
+<p>Where 
+<script type="math/tex">\begin{align*}\Delta(x) \triangleq f(x(t))-Ax(t)\end{align*}</script> is the model uncertainty.</p>
+
+<p>The MRAC controller aims to enforce the unknown nonlinear dynamic system to track a designed reference model given as</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \dot{x}_{rm}(t) = A_{rm}x_{rm}(t)+B_{rm}r(t)
+\end{align*}</script>
+
+<p>The total control is designed to be of the form <script type="math/tex">u(t) = -kx(t)+k_gr(t)-\nu_{ad}</script>,</p>
+
+<p>Where <script type="math/tex">k, k_g</script> are designed to satisfy the following matching condition</p>
+
+<script type="math/tex; mode=display">A_{rm} = A-Bk, B_{rm}=Bk_g</script>
+
+<p>The MRAC focuses on designing the adaptive part of the controller <script type="math/tex">\nu_{ad}</script>, which aims at canceling the model uncertainties.</p>
+
+<p><img src="/assets/MRAC.png" width="500" /></p>
+
+<p>Traditionally classical MRAC handles the uncertainty as modeled as a single layer neural network. The uncertainties can be modeled as structured and unstructured uncertainties as follows,</p>
+
+<p><strong>Structured Uncertainty</strong></p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \Delta(x(t)) = W^{*T}\sigma(x)
+\end{align*}</script>
+
+<p>Where <script type="math/tex">W^{*} \in \mathbb{R}^{k \times m}</script> are the unknown ideal weights, and <script type="math/tex">\sigma(x):\mathbb{R}^k \rightarrow \mathbb{R}^m</script> are known feature vector (specific to the plant dynamics)</p>
+
+<p><strong>Un-Structured Uncertainty</strong></p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \Delta(x(t)) = W^{*T}\phi(x) + \epsilon(x)
+\end{align*}</script>
+
+<p>Where <script type="math/tex">W^{*} \in \mathbb{R}^{k \times m}</script> are the unknown ideal weights, <script type="math/tex">\phi(x):\mathbb{R}^k \rightarrow \mathbb{R}^m</script> are designed feature vector (RBF are most popular choice)
+and <script type="math/tex">\epsilon(x) \in \mathbb{R}^m</script> is network approximation error(<a href="https://pdfs.semanticscholar.org/05ce/b32839c26c8d2cb38d5529cf7720a68c3fab.pdf">Universal Approximation Theorem</a>)</p>
+
+<p>Since we do not know the true ideal weights <script type="math/tex">W^*</script>, we learn the approximation of true weights <script type="math/tex">W</script> online interacting with the system. The Weights are update in the direction of minimizing the instantaneous tracking <script type="math/tex">e(t) = x(t)-x_{rm}(t)</script>.</p>
+
+<p>The classical MRAC weight update law is given as,</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+ \dot{W} = -\Gamma\phi(x)e(t)^TPB
+\end{align*}</script>
+
+<p>where <script type="math/tex">P</script> is solution of Lyapunov equation <script type="math/tex">A_{rm}^TP+PA_{rm}+Q = 0</script>, where <script type="math/tex">Q, P > 0</script>.</p>
+
+<p>The tricky part of MRAC is when the uncertainty is treated as unstructured uncertainty, which requires the designer to select the basis vectors and tune hyperparameter judiciously. We provide results for MRAC controller performance on a toy example of the “Wing-Rock” dynamics of delta-wing aircraft.</p>
+
+<p>We will assume three cases</p>
+<ul>
+  <li>Structured uncerainty (when the structure of uncertainty is known) <script type="math/tex">\nu_{ad} = W^T\sigma(x)</script></li>
+  <li>Classical MRAC with linear in state network <script type="math/tex">\nu_{ad} = W^Tx</script></li>
+  <li>Unstructured uncerainty (with RBF features) <script type="math/tex">\nu_{ad} = W^T\phi(x)</script></li>
+</ul>
+
+<p>The wing rock dynamics is defined as,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ \dot{\theta} &= p \\
+ \dot{p} &= L_{\delta_a}\delta_{a} + \Delta(x)
+\end{align*} %]]></script>
+
+<p>where <script type="math/tex">\Delta(x) = W^{*}_{0} + W^{*}_{1}\theta + W^{*}_{2}p + W^{*}_{3}\|\theta\|p + W^{*}_{4}\|p\|p + W^{*}_{5}\theta^3</script></p>
+
+<p>For the Structured Uncertainty case, we use the known basis vector from the dynamics and estimate <script type="math/tex">W_i</script>’s online.
+Lets set <script type="math/tex">\sigma(x) = [1, \theta, p, \|\theta\|p, \|p\|p, \theta^3]</script> and learning rate <script type="math/tex">\Gamma = 100</script>, the MRAC controller results in state tracking and disturbance, weight approximation presented in the plots as follows,
+<img src="/assets/structured_MRAC.png" alt="structured_MRAC" />
+For unstructured case, the most popular choice of feature for the classical MRAC controller (like L1-Adaptive Controller) is the system state itself. As we can see in the plots below for the given nonlinear disturbance, a linear in-state representation of uncertainty is clearly not sufficient. 
+<img src="/assets/Classical_MRAC.png" alt="classical_MRAC" />
+In the more general case where the uncertainty <script type="math/tex">\Delta(x)</script> is assumed to be continuously differentiable and defined over a compact domain, the adaptive part
+of the control law can be formed using Radial basis functions (RBF) or shallow networks ( SHL). The following plots are for RBF-NN MRAC controller. Given a dynamical system, and with a careful choice of feature hyperparameters, we can construct an NN based adaptive controller that performs well with minimal tracking error. 
+<img src="/assets/RBF_MRAC.png" alt="Unstructured_MRAC" /></p>
+
+<p>We leave the stability aspects of the controller out of this article. Interested readers can refer [Concurrent Learning without Persistency of Excitation] for further details.</p>
+
+<p>Further reading <a href="/dmrac/update/2019/12/18/Deep-Model-Reference-Adaptive-Control.html">Deep Model Reference Adaptive Control</a></p>
+
+:ET

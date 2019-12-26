@@ -1,0 +1,6 @@
+I"p<h2 id="abstract">Abstract:</h2>
+<p>We present a new neuroadaptive architecture: Deep Neural Network-based Model Reference Adaptive Control (DMRAC). 
+Our architecture utilizes the power of deep neural network representations for modeling significant nonlinearities while marrying it with the boundedness guarantees that characterize MRAC based controllers. We demonstrate that 
+DMRAC can subsume previously studied learning-based MRAC methods, such as concurrent learning and GP-MRAC. 
+This makes DMRAC a highly powerful architecture for high-performance control of nonlinear systems with long-term learning properties.</p>
+:ET
