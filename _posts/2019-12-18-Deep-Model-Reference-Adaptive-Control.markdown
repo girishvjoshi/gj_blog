@@ -16,7 +16,7 @@ please refer to post [Model Reference Adaptive Control] for basics of MRAC
 
 One significant design choice in MRAC architecture is the selection of feature vector for unstructured uncertainty case. In [Model Reference Adaptive Control] article, we showed empirically that the choice of the feature vector in the adaptive element directly affected the system capability to approximate the uncertainties.  Using system state $$x(t)$$ as features resulted in a very poor estimate of uncertainty, and reference tracking, whereas  RBF feature need operating domain knowledge for hyperparameter tuning. 
 
-![classical_MRAC](/assets/Classical_MRAC.png)
+![classical_MRAC](/assets/Classical_MRAC.PNG)
 ![Unstructured_MRAC](/assets/RBF_MRAC.png)
 
 To alleviate this issue, Chowdhary et al. presented a [Gaussian Process Model Reference Adaptive Controller]. Gaussian Process (GP)-MRAC utilizes a GP as a model of uncertainty. A GP is a Bayesian nonparametric adaptive element that can adapt both its weights and the structure of the model in response to the data. GP-MRAC has strong long-term learning properties as well as high control performance (Refer [Gaussian Process Model Reference Adaptive Controller with Generative Network]). 
