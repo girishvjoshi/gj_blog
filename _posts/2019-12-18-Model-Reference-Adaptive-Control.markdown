@@ -122,4 +122,4 @@ We leave the stability aspects of the controller out of this article. Interested
 Further reading [Deep Model Reference Adaptive Control]
 
 [Universal Approximation Theorem]: https://pdfs.semanticscholar.org/05ce/b32839c26c8d2cb38d5529cf7720a68c3fab.pdf
-[Deep Model Reference Adaptive Control]: /dmrac/update/2019/12/18/Deep-Model-Reference-Adaptive-Control.html
+[Deep Model Reference Adaptive Control]: /gj_blog/dmrac/update/2019/12/18/Deep-Model-Reference-Adaptive-Control.html
