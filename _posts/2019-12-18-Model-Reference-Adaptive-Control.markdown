@@ -106,7 +106,7 @@ where $$\Delta(x) = W^{*}_{0} + W^{*}_{1}\theta + W^{*}_{2}p + W^{*}_{3}\|\theta
 For the Structured Uncertainty case, we use the known basis vector from the dynamics and estimate $$W_i$$'s online.
 Lets set $$\sigma(x) = [1, \theta, p, \|\theta\|p, \|p\|p, \theta^3]$$ and learning rate $$\Gamma = 100$$, the MRAC controller results in state tracking and disturbance, weight approximation presented in the plots as follows,
 
-![structured_MRAC](/gj_blog/assets/structured_MRAC.png)
+<img src="/gj_blog/assets/structured_MRAC.png" width="500">
 
 For unstructured case, the most popular choice of feature for the classical MRAC controller (like L1-Adaptive Controller) is the system state itself. As we can see in the plots below for the given nonlinear disturbance, a linear in-state representation of uncertainty is clearly not sufficient. 
 
