@@ -93,7 +93,7 @@ In this experiment the controller is tasked to maintain a circular trajectory tr
 <img src="/gj_blog/assets/DMRAC_HWBS2.png">
 <img src="/gj_blog/assets/DMRAC_HWBC.png">
 
-<iframe src="https://www.youtube.com/embed/sP4fFDVWcJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sP4fFDVWcJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Fault Tolerant Control
 
