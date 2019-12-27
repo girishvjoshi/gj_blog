@@ -89,9 +89,9 @@ We used an off the shelf available [Parrot Mambo Quadrotor] to experiment with D
 
 In this experiment the controller is tasked to maintain a circular trajectory tracking under a cross wind. We attached a cloth underneath the quadrotor, under the cross wind flapping of this cloth introduced nonlinear disturbance torque on the vehicle apart from side ward force from cross wind. The controller task is to track the trajectory under cross winds.
 
-![DNN_MRAC](/assets/DMRAC_HWBT2.png)
-![DNN_MRAC](/assets/DMRAC_HWBS2.png)
-![DNN_MRAC](/assets/DMRAC_HWBC.png)
+<img src="/gj_blog/assets/DMRAC_HWBT2.png">
+<img src="/gj_blog/assets/DMRAC_HWBS2.png">
+<img src="/gj_blog/assets/DMRAC_HWBC.png">
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sP4fFDVWcJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
