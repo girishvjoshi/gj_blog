@@ -95,13 +95,12 @@ In this experiment the controller is tasked to maintain a circular trajectory tr
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sP4fFDVWcJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-
 ### Fault Tolerant Control
 
 In this experiment the controller handles a rotor blade breaking in middle of the flight (Listen to rotor breaking!!). The quadrotor is commanded to maintian a altitude of 1 meter above ground level. The rotor blade breaks in middle of flight and controller task is to maintain the altitude despite the fault. 
 
-![DNN_MRAC](/assets/DMRAC_FTC.png)
+<img src="/gj_blog/assets/DMRAC_FTC.png">
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gBpfiXSdNyk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
