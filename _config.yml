@@ -2,7 +2,7 @@ title: GIRISH JOSHI
 # author: GitHub User
 email: joshivgirish@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
-  This is the my personal page, I will host Reinforcement Leanring and
+  This is the my personal page, I will host Reinforcement Learning and
   Adaptive control related posts and tutorials here.
 baseurl: gj_blog 
 show_excerpts: false # set to true to show excerpts on the homepage
