@@ -79,7 +79,7 @@ $$
 
 The total controller flow diagram is as follows, and further details can be found in [Deep Model Reference Adaptive Control]
 
-<img src="/gj_blog/assets/DMRAC.png">
+<img src="/gj_blog/assets/DMRAC.png" width="560">
 
 ## Flight Results
 We used an off the shelf available [Parrot Mambo Quadrotor] to experiment with DMRAC control architecture in the VICON facility at the University of Illinois CSL [Illinois Robotics Lab].
