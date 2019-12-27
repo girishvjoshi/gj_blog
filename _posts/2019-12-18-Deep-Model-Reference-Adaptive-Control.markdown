@@ -22,7 +22,7 @@ One significant design choice in MRAC architecture is the selection of feature v
 
 To alleviate this issue, Chowdhary et al. presented a [Gaussian Process Model Reference Adaptive Controller]. Gaussian Process (GP)-MRAC utilizes a GP as a model of uncertainty. A GP is a Bayesian nonparametric adaptive element that can adapt both its weights and the structure of the model in response to the data. GP-MRAC has strong long-term learning properties as well as high control performance (Refer [Gaussian Process Model Reference Adaptive Controller with Generative Network]). 
 
-![GP](/assets/GP.png)
+<img src="/gj_blog/assets/GP.png">
 
 However, GPs can be viewed as “shallow” machine learning models, and do not utilize the power of learning complex features through compositions as deep networks do. Hence, one wonders whether the power of deep learning could lead to even more powerful learning-based MRAC architectures than those utilizing GPs.
 
