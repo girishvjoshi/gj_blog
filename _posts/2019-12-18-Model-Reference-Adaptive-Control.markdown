@@ -107,9 +107,11 @@ For the Structured Uncertainty case, we use the known basis vector from the dyna
 Lets set $$\sigma(x) = [1, \theta, p, \|\theta\|p, \|p\|p, \theta^3]$$ and learning rate $$\Gamma = 100$$, the MRAC controller results in state tracking and disturbance, weight approximation presented in the plots as follows,
 ![structured_MRAC](/assets/structured_MRAC.png)
 For unstructured case, the most popular choice of feature for the classical MRAC controller (like L1-Adaptive Controller) is the system state itself. As we can see in the plots below for the given nonlinear disturbance, a linear in-state representation of uncertainty is clearly not sufficient. 
+<img src="/gj_blog/assets/Classical_MRAC.png" width="500">
 ![classical_MRAC](/assets/Classical_MRAC.png)
 In the more general case where the uncertainty $$\Delta(x)$$ is assumed to be continuously differentiable and defined over a compact domain, the adaptive part
 of the control law can be formed using Radial basis functions (RBF) or shallow networks ( SHL). The following plots are for RBF-NN MRAC controller. Given a dynamical system, and with a careful choice of feature hyperparameters, we can construct an NN based adaptive controller that performs well with minimal tracking error. 
+<img src="/gj_blog/assets/RBF_MRAC.png" width="500">
 ![Unstructured_MRAC](/assets/RBF_MRAC.png)
 
 We leave the stability aspects of the controller out of this article. Interested readers can refer [Concurrent Learning without Persistency of Excitation] for further details.
