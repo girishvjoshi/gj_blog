@@ -128,7 +128,7 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-gh]: https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/-->
 
-[Model Reference Adaptive Control]: /jekyll/update/2019/12/18/Model-Reference-Adaptive-Control.html
+[Model Reference Adaptive Control]: /gj_blog/jekyll/update/2019/12/18/Model-Reference-Adaptive-Control.html
 [Gaussian Process Model Reference Adaptive Controller]: https://ieeexplore.ieee.org/document/6759992
 [Gaussian Process Model Reference Adaptive Controller with Generative Network]: https://ieeexplore.ieee.org/document/8619431
 [Deep Model Reference Adaptive Control]: https://arxiv.org/abs/1909.08602
