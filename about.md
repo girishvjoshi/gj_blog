@@ -7,7 +7,7 @@ I am a PhD candidate at Department of Aerospace Engineering, University of Illin
 
 I have Masters degree in Aerospace engineering from Indian Institue of Science Bangalore. At IISC I worked on my thesis titled [Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/assets/ME_THESIS.pdf). 
 
-Before leaving for my PhD at UIUC, I spent 8 wonderful years at Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now URSC).
+Before leaving for my PhD at UIUC, I spent 8 wonderful years at Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now [URSC](https://www.ursc.gov.in/)).
 
 **Publications**
 1. Girish Joshi, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal MPSP Guidance, American control conference,IEEE, Washington DC, 2013
@@ -38,7 +38,5 @@ CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W M
 You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll)
-[URSC](https://www.ursc.gov.in/)
-
 
 [jekyll-organization]: https://github.com/jekyll -->
