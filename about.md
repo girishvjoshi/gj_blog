@@ -5,7 +5,9 @@ permalink: /about/
 ---
 I am a PhD candidate at Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My Research is directed towards exploring Sample Efficient Policy Transfer in Cross Domain tasks in RL, Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.
 
-I have Masters degree in Aerospace engineering from Indian Institue of Science Bangalore. I was part of Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now URSC) for 8 years before leaving for my PhD at UIUC!
+I have Masters degree in Aerospace engineering from Indian Institue of Science Bangalore. At IISC I worked on my thesis titles Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques. 
+
+Before leaving for my PhD at UIUC, I spent 8 wonderful years at Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now URSC).
 
 **Publications**
 1. Girish Joshi, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal MPSP Guidance, American control conference,IEEE, Washington DC, 2013
@@ -28,6 +30,7 @@ I have Masters degree in Aerospace engineering from Indian Institue of Science B
 CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W Main St, Urbana, IL 61801
 
 [CV](/assets/GirishJoshi_CV.pdf)
+[Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/aasets/ME_THESIS.pdf)
 
 <!-- You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
@@ -36,6 +39,7 @@ CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W M
 You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll)
+[URSC](https://www.ursc.gov.in/)
 
 
 [jekyll-organization]: https://github.com/jekyll -->
