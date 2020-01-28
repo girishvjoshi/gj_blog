@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-I am a PhD candidate at Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My Research is direct towards exploring Sample Efficient Policy Transfer in Cross Domain tasks in RL, Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.
+I am a PhD candidate at Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My Research is directed towards exploring Sample Efficient Policy Transfer in Cross Domain tasks in RL, Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.
 
 I have Masters degree in Aerospace engineering from Indian Institue of Science Bangalore. I was part of Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now URSC) for 8 years before leaving for my PhD at UIUC!
 
