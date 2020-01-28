@@ -31,7 +31,7 @@ CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W M
 
 [CV](/assets/GirishJoshi_CV.pdf)
 
-[Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques]:(/assets/ME_THESIS.pdf)
+[Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques]: (/assets/ME_THESIS.pdf)
 
 <!-- You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
