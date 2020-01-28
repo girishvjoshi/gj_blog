@@ -30,7 +30,7 @@ Before leaving for my PhD at UIUC, I spent 8 wonderful years at Indian Space res
 CSL160 Coordinated Science Lab, University of Illinois Urbana-Champaigm 1308 W Main St, Urbana, IL 61801
 
 [CV](/assets/GirishJoshi_CV.pdf)
-[Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/aasets/ME_THESIS.pdf)
+[Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/assets/ME_THESIS.pdf)
 
 <!-- You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
