@@ -3,11 +3,11 @@ layout: page
 title: About
 permalink: /about/
 ---
-I am a PhD candidate at Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My Research is directed towards exploring Sample Efficient Policy Transfer in Cross Domain tasks in RL, Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.
+I am a Ph.D. candidate at the Department of Aerospace Engineering, University of Illinois Urbana-Champaign. My research is directed towards exploring Sample Efficient Policy Transfer in Cross-Domain tasks in RL; Information enabled Adaptive Control for Cyber-Physical Systems, Bayesian Nonparametric Approach in Adaptive Control, and Decision making in Non-Stationary Environment and Guidance, Control and Estimation Theory.
 
-I have Masters degree in Aerospace engineering from [Indian Institue of Science Bangalore](http://aero.iisc.ac.in/). At IISC I worked on my thesis titled [Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/assets/ME_THESIS.pdf). 
+I have a Master's degree in Aerospace engineering from the [Indian Institue of Science Bangalore](http://aero.iisc.ac.in/). At IISC, I worked on my thesis titled [Robust and Precision Satellite Formation Flying Guidance Using Adaptive Optimal Control Techniques](/assets/ME_THESIS.pdf).
 
-Before leaving for my PhD at UIUC, I spent 8 wonderful years at Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now [URSC](https://www.ursc.gov.in/)).
+Before leaving for my Ph.D. at UIUC, I spent 8 wonderful years at the Indian Space research Organization (ISRO) as Scientist/Engineer 'SD' at ISRO-Satellite Center Bangalore (now [URSC](https://www.ursc.gov.in/)).
 
 **Publications**
 1. Girish Joshi, Radhakant Padhi, Formation Flying of Small Satellites using Suboptimal MPSP Guidance, American control conference,IEEE, Washington DC, 2013
