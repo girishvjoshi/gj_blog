@@ -23,6 +23,7 @@ Before leaving for my Ph.D. at UIUC, I spent 8 wonderful years at the Indian Spa
 11. Girish Joshi, Girish Chowdhary, Hybrid Direct-Indirect Adaptive Control of Nonlinear System with Unmatched Uncertainty, IEEE International Conference on Control, Decision and Information Technologies 2019
 12. Girish Joshi, Girish Chowdhary, Deep Model Reference Adaptive Control, IEEE International Conference on Decision and Control 2019
 13. Girish Joshi, Jasvir Virdi, Girish Chowdhary, Experimental Evaluation of Deep Model Reference Adaptive Control, AIAA SciTech-2020
+[ICRA2021 Supplementary](/assets/ATLsup.pdf)
 
 
 **Contact Address**
